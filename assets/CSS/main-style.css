@@ -194,7 +194,7 @@ main {
 }
 
 .logo img {
-    height: 90px;
+    height: 60px;
 }
 
 .nav .bars {
@@ -417,16 +417,18 @@ main {
         margin-top: 60px;
         position: absolute !important;
         bottom: 0 !important;
-        left: 0 !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
     }
     .height footer{
         position: relative !important;
+        width: 100% !important;
     }
 }
 
 footer {
     width: 95% !important;
-    margin: auto;
+    margin: auto !important;
     margin-top: 60px;
 }
 
@@ -512,10 +514,138 @@ main h1 {
     font-size: var(--headers-size);
     font-weight: var(--headers-weight);
     text-transform: capitalize;
-    /* width: 100% !important; */
+}
+
+/* ================== Home Page ================= */
+
+
+.content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.headlineforhome h1 {
+    font-weight: bold;
+    font-size: 70px;
+    color: var(--green);
+}
+.headlineforhome h2{
+    font-size: 40px;
+    font-weight: 500;
+    color: #757575;
+    margin-top: 0px;
+    line-height: 40px;
+}
+
+.left{
+    height: fit-content !important;
+    width: 48%;
+    padding: 20px 0px ;
+}
+.home-right{
+    width: 48%;
+}
+
+.description1{
+    font-size: 28px !important;
+    color: #2D2D2D;
+    line-height: 1.5;
+}
+.description2{
+    font-size: 23px;
+    line-height: 1.4;
+    color: rgb(160, 160, 160);
+    margin-top: 30px;
+}
+
+.home-right img{
+    width: 200px;
+    border: none;
+    border-radius: 6px;
+    margin-top: 20px;
+}
+.home-right{
+    display: flex;
+    justify-content: center !important;
+    margin-top: -40px;
+}
+.home-right div{
+    width: 210px !important;
+}
+.home-right div:last-child{
+    margin-top: -30px;
 }
 
 
+
+
+@media(max-width:992px) {
+     .content{
+        flex-wrap: wrap-reverse !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+    }
+    .headlineforhome h2{
+        font-size: 30px;
+        margin-bottom: 30px;
+    } 
+    .home-right img{
+        width: 400px;
+        margin: auto !important;
+        margin-top: 30px !important;
+
+    }
+    .left{
+        width: 100%;
+        margin-top: 0px;
+    }
+    .home-right{
+        width: 100%;
+    }
+    .home-right div{
+        width: 100% !important;
+    }
+    .home-right div:last-child{
+        display: none !important;
+    }
+    .top-right{
+        display: none;
+    }
+    .bottom-left{
+        display: none;
+    }
+    .bottom-right{
+        display: none;
+    }
+}
+@media (max-width:600px) {
+    .home-right img{
+        width: 290px;
+        margin: 0px !important;
+    }
+    .headlineforhome h1{
+        font-size: 35px !important;
+    }
+    .headlineforhome h2{
+        font-size: 18px !important;
+    }
+    .description1{
+        font-size: 20px !important;
+        line-height: 1.4 !important;
+    }
+    .description2{
+        font-size: 18px !important;
+        line-height: 1.4 !important;
+        margin-bottom: 20px;
+    }
+
+}
+
+
+
+/* ================== End of  Home Page ================= */
 
 /* ============== CAREERS ================= */
 .career {
@@ -792,7 +922,7 @@ main h1 {
     padding: 20px;
     border-radius: 15px;
     height: 320px ;
-    width: 380px;
+    width: 320px;
 
 }
 .big__card img{
@@ -815,8 +945,12 @@ main h1 {
     .about__flex {
         flex-direction: column;
         justify-content: center;
+        padding: 0px !important;
+        margin: 0px !important;
         align-items: center;
     }
+    
+    
     .values__cards{
         flex-direction: column;
     }    
@@ -831,27 +965,37 @@ main h1 {
     }
     .small__card{
         display: flex;
-        align-items: flex-start;
-        justify-content: center;
+        align-items: center !important;
+        justify-content: flex-start;
         padding: 0px !important;
         width: 100% !important;
         border-radius: 20px !important;
-        flex-direction: column;
-        flex-wrap: wrap;
-        height: 100px;
+        height: 100px !important;
+        overflow: hidden;
+        margin-left: 0px !important;
+    }
+    .small__card div:first-child{
+        margin-left: -2px !important;
+        height: 100px !important;
+        width: 75px;
+        margin-right: 5px;
+        overflow: hidden !important;
     }
     .small__card h5{
-        width: 78% !important;
+        margin-top: 8px;
+        width: 80% !important;
         text-align: left;
         font-size: 20px !important;
-        font-weight: 500 !important;
+        font-weight: 700 !important;
         color: #2D2D2D !important;
     }
     .small__card p{
-        font-size: 15px;
-        width: 77% !important;
+        margin-top: 8px;
+        font-size: 18px;
+        width: 80% !important;
+        overflow: hidden !important;
         line-height: 1;
-        text-align: left;
+        text-align: left !important;
         color: #717070 !important;
     }
     .values__cards .selected,
@@ -860,9 +1004,15 @@ main h1 {
         color: #2D2D2D !important;
     }
     .small__card img{
+        width: 100% !important;
+        height: 100px !important;
+        padding: 0px !important;
+        background-color: rgb(205, 238, 219) !important;
+    }
+    .text__content{
+        width: 90% !important;
         height: 100% !important;
-        margin-left: -2px !important;
-        margin-right: 2px;
+        overflow: hidden !important;
     }
     .rem{
         display: block;
@@ -876,19 +1026,25 @@ main h1 {
         width: 80% !important;
         margin: 20px auto;
     }
+    .header-p{
+        font-size: 18px !important;
+    }
 
     .about .image img{
         width: 90%;
         margin: auto !important;
     }
     .small__card h5{
-        font-size: 10px !important;
+        font-size: 15px !important;
         line-height: 1 !important;
         font-weight: 300 !important;
         color: #2D2D2D !important;
     }
+    .small__card{
+        height: 160px;
+    }
     .small__card p{
-        font-size: 8px !important;
+        font-size: 14px !important;
         line-height: 1 !important;
         text-align: left;
         color: #717070 !important;
@@ -919,8 +1075,21 @@ main h1 {
     }
     .about__flex li,
     .about__flex p{
-        font-size: 14px;
+        font-size: 14px !important;
         line-height: 20px !important;
+    }
+    .small__card h5{
+        font-size: 12px !important;
+        width: 100% !important;
+    }
+    .small__card p{
+        font-size: 10px !important;
+        line-height: 10px !important;
+        width: 95% !important;
+        height: 85% !important;
+        overflow: hidden !important;
+        padding-bottom: 3px !important;
+        margin-top: 5px !important;
     }
 }
 
