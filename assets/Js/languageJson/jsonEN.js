@@ -48,6 +48,7 @@ const jsonEN = {
   
   
   "services": "Services",
+  "services2": "Services",
   "servicesSub1": "There are a variety of services that Bayanatz can offer to support digital transformation initiatives in your organization.",
   "servicesSub2": "Here are ten key services that can help organizations achieve their digital transformation goals:",
   
@@ -83,6 +84,8 @@ const jsonEN = {
   
   "importantReads":"Important Reads",
   "readMore":"Read more",
+  "readMore2":"Read more",
+  "readMore3":"Read more",
 
   "importTitle1":"Why digital transformation is important?",
   "importDate1":"March 16, 2022",

@@ -66,6 +66,15 @@ form div.arphonee::before{
     right: 126px !important;
     top: 0px !important;
 }
+.carousel-two,.carousel-one{
+    margin-right: 0px ;
+    margin-left: 40px !important;
+}
+.btns-container {
+    left: 0px;
+    justify-content: flex-start;
+    flex-direction: row-reverse;
+}
 
 @media (max-width:1020px) {
     .career .info{
@@ -109,6 +118,9 @@ form div.arphonee::before{
     
     .small__card p{
         
+        text-align: right !important;
+    }
+    .big-card-discription{
         text-align: right !important;
     }
     

@@ -4,7 +4,7 @@ const arrowBtns = document.querySelectorAll(".arrow-btn");
 const carouselOne = document.querySelector(".carousel-one");
 const carouselTwo = document.querySelector(".carousel-two");
 const firstCardWidth = document.querySelector(".card").offsetWidth;
-const secondCardWidth = document.querySelector(".big-card").offsetWidth;
+const secondCardWidth = document.querySelector(".serv_big-card").offsetWidth;
 
 let timeoutId1, timeoutId2;
 arrowBtns.forEach((btn) => {
@@ -19,6 +19,7 @@ arrowBtns.forEach((btn) => {
     }
   });
 });
+
 
 const autoPlay1 = () => {
   timeoutId1 = setTimeout(() => {
@@ -59,3 +60,24 @@ carouselTwo.addEventListener("mouseenter", () => {
   clearTimeout(timeoutId2);
 });
 carouselTwo.addEventListener("mouseleave", autoPlay2);
+arrowBtns.forEach((btn) => {
+  btn.addEventListener("mouseenter", () => {
+    const currentCarousel = btn.parentElement.nextElementSibling;
+    if (currentCarousel === carouselOne) {
+      clearTimeout(timeoutId1);
+    } else {
+      clearTimeout(timeoutId2);
+    }
+  });
+});
+
+arrowBtns.forEach((btn) => {
+  btn.addEventListener("mouseleave", () => {
+    const currentCarousel = btn.parentElement.nextElementSibling;
+    if (currentCarousel === carouselOne) {
+      autoPlay1
+    } else {
+      autoPlay2
+    }
+  });
+});

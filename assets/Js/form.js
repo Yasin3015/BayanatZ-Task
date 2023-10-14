@@ -6,9 +6,6 @@ const emailError = document.getElementById("emailError");
 const phoneError = document.getElementById("phoneError");
 const subjectError = document.getElementById("subjectError");
 const messageError = document.getElementById("messageError");
-const dialogTitleWebEl = document.querySelector(".dialogTitleWeb");
-const dialogDescWebEl = document.querySelector(".dialogDescWeb");
-const closeEl = document.querySelector(".close");
 let currentLang = localStorage.getItem("language");
 
 let displayError = (ele, msg) => {
@@ -17,29 +14,6 @@ let displayError = (ele, msg) => {
   ele.parentElement.classList.add("bg-color");
 };
 
-// REMOVE THE MODEL
-let modal = document.getElementById("theModel");
-let removeModel = () => {
-  document.getElementById("modelMessage").classList.remove("transform");
-  document.getElementById("theModel").style.display = "none";
-};
-window.onclick = function (event) {
-  if (event.target == modal) {
-    removeModel();
-  }
-};
-// show the model
-let showModel = () => {
-  currentLang = localStorage.getItem("language");
-  const jsonLang = currentLang === "English" ? jsonEN : jsonAR;
-  console.log(jsonLang);
-  dialogTitleWebEl.textContent = jsonLang["dialogTitleWeb"];
-  dialogDescWebEl.textContent = jsonLang["dialogDescWeb"];
-  closeEl.textContent = jsonLang["close"];
-  document.getElementById("theModel").style.display = "block";
-  document.getElementById("modelMessage").classList.add("transform");
-};
-document.getElementById("close").addEventListener("click", removeModel);
 
 const isValidName = (name) => {
   const jsonLang = currentLang === "English" ? jsonEN : jsonAR;
@@ -133,19 +107,18 @@ formEl.addEventListener("submit", (e) => {
   )
     return;
 
-  // fetch("https://knowticed-api.onrender.com/form", {
-  //   method: "POST",
-  //   headers: {
-  //     "Content-Type": "application/json",
-  //   },
-  //   body: JSON.stringify(data),
-  // })
-  //   .then((res) => res.json())
-  //   .then((data) => {
-  //     console.log(data);
-  //   })
-  //   .catch((err) => console.log(err));
-  // showModel();
+  fetch("https://knowticed-api.onrender.com/form", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data);
+    })
+    .catch((err) => console.log(err));
 });
 
 // Remove error on focus input
