@@ -6,25 +6,16 @@ html{
     margin-right: 35px;
 }
 .about__flex,
-.Home,
-.buttom,
 .career__rev{
-    background: linear-gradient(-106.65deg, rgba(255, 255, 255, 0.4) -2.73%, rgba(255, 255, 255, 0) 65.25%);
-    padding-right: 0px;
-    padding-left: 0px;
+    padding-right: 0px !important;
+    padding-left: 0px !important;
 }
-.about__flex ul,
-.about__flex ul,
 .about__flex p{
-    padding-left: 0px;
-    padding-right: 25px;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
 }
-.landing section .img {
-    padding-right: 40px;
-    padding-bottom: 0px;
-}
+
 .career__left{
-    background: linear-gradient(106.65deg, rgba(255, 255, 255, 0.4) -2.73%, rgba(255, 255, 255, 0) 65.25%);
     padding-left: 0px !important;
 }
 .tab__content{
@@ -59,6 +50,9 @@ form div::before{
 
 .text h1,.text h2, .text p{
     text-align: right !important;
+}
+.homeTitle{
+    font-size: 30px !important;
 }
 
 
@@ -99,8 +93,29 @@ form div.arphonee::before{
     .visible2{
         right: 0 !important;
     }
-    main .buttom{
-        text-align: right;
+    .small__card{
+        margin-right: 0px !important;
+    }
+    .small__card div:first-child{
+
+        margin-right: -2px ;
+    }
+    .small__card div:last-child{
+        margin-right: 7px !important;
+    }
+    .small__card h5{
+        text-align: right !important;   
+    }
+    
+    .small__card p{
+        
+        text-align: right !important;
+    }
+    
+    .small__card img{
+        height: 100% !important;
+        margin-right: -2px !important;
+        margin-left: 4px !important;
     }
 }
 @media (max-width:930px) {
@@ -126,30 +141,7 @@ form div.arphonee::before{
     }
     .career__rev {
         padding-left: 0px;
-        flex-direction: column-reverse !important;
+        flex-direction: column!important;
     }
 
-    
-    .career .img img.iimg{
-        width: 100% !important;
-    }
-
-}
-.buttom{
-    padding-left: 0px;
-    padding-right: 35px;
-}
-.buttom li,
-.buttom p{
-    line-height: 30px;
-}
-.return{
-    padding-right: 0px !important;
-    margin-right:  0px !important;
-    padding-left: 10px !important;
-    font-size: 50px;
-}
-.landing .about__flex .info p.homeDec,
-.landing .about__flex .info p.homeDec2{
-    padding-right: 0px !important;
 }

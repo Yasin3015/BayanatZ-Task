@@ -1,5 +1,5 @@
-// import { jsonEN } from "./languageJson/jsonEN.js";
-// import { jsonAR } from "./languageJson/jsonAR.js";
+import { jsonEN } from "./languageJson/jsonEN.js";
+import { jsonAR } from "./languageJson/jsonAR.js";
 const formEl = document.querySelector("form");
 const nameError = document.getElementById("nameError");
 const emailError = document.getElementById("emailError");
@@ -18,37 +18,37 @@ let displayError = (ele, msg) => {
 };
 
 // REMOVE THE MODEL
-// let modal = document.getElementById("theModel");
-// let removeModel = () => {
-//   document.getElementById("modelMessage").classList.remove("transform");
-//   document.getElementById("theModel").style.display = "none";
-// };
-// window.onclick = function (event) {
-//   if (event.target == modal) {
-//     removeModel();
-//   }
-// };
+let modal = document.getElementById("theModel");
+let removeModel = () => {
+  document.getElementById("modelMessage").classList.remove("transform");
+  document.getElementById("theModel").style.display = "none";
+};
+window.onclick = function (event) {
+  if (event.target == modal) {
+    removeModel();
+  }
+};
 // show the model
-// let showModel = () => {
-//   currentLang = localStorage.getItem("language");
-//   const jsonLang = currentLang === "English" ? jsonEN : jsonAR;
-//   console.log(jsonLang);
-//   dialogTitleWebEl.textContent = jsonLang["dialogTitleWeb"];
-//   dialogDescWebEl.textContent = jsonLang["dialogDescWeb"];
-//   closeEl.textContent = jsonLang["close"];
-//   document.getElementById("theModel").style.display = "block";
-//   document.getElementById("modelMessage").classList.add("transform");
-// };
-// document.getElementById("close").addEventListener("click", removeModel);
+let showModel = () => {
+  currentLang = localStorage.getItem("language");
+  const jsonLang = currentLang === "English" ? jsonEN : jsonAR;
+  console.log(jsonLang);
+  dialogTitleWebEl.textContent = jsonLang["dialogTitleWeb"];
+  dialogDescWebEl.textContent = jsonLang["dialogDescWeb"];
+  closeEl.textContent = jsonLang["close"];
+  document.getElementById("theModel").style.display = "block";
+  document.getElementById("modelMessage").classList.add("transform");
+};
+document.getElementById("close").addEventListener("click", removeModel);
 
 const isValidName = (name) => {
-  // const jsonLang = currentLang === "English" ? jsonEN : jsonAR;
+  const jsonLang = currentLang === "English" ? jsonEN : jsonAR;
   const namePattern = /^[A-Za-z\u0600-\u06FF\s'-]+$/;
   if (name.length === 0) {
-    displayError(nameError, "Please Enter Name");
+    displayError(nameError, jsonLang["pleaseName"]);
     return false;
   } else if (!namePattern.test(name)) {
-    displayError(nameError, "Invalid Name");
+    displayError(nameError, jsonLang["invalidName"]);
     return false;
   } else {
     nameError.textContent = "";
@@ -57,14 +57,14 @@ const isValidName = (name) => {
 };
 
 const isValidEmail = (email) => {
-  // const jsonLang = currentLang === "English" ? jsonEN : jsonAR;
+  const jsonLang = currentLang === "English" ? jsonEN : jsonAR;
   if (email === "") {
-    displayError(emailError, "Please Enter Email");
+    displayError(emailError, jsonLang["pleaseEmail"]);
     return false;
   }
   const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
   if (!emailRegex.test(email)) {
-    displayError(emailError, "invalid Email");
+    displayError(emailError, jsonLang["invalidEmail"]);
     return false;
   } else {
     emailError.textContent = "";
@@ -72,14 +72,14 @@ const isValidEmail = (email) => {
   }
 };
 const isValidPhone = (phone) => {
-  // const jsonLang = currentLang === "English" ? jsonEN : jsonAR;
+  const jsonLang = currentLang === "English" ? jsonEN : jsonAR;
   if (phone === "") {
-    displayError(phoneError, "please Enter Phone Number");
+    displayError(phoneError, jsonLang["pleasePhone"]);
     return false;
   }
   const phoneRegex = /^\d{10,15}$/;
   if (!phoneRegex.test(phone)) {
-    displayError(phoneError,"Invalid Phone Number");
+    displayError(phoneError, jsonLang["invalidPhone"]);
     return false;
   } else {
     phoneError.textContent = "";
@@ -88,18 +88,18 @@ const isValidPhone = (phone) => {
 };
 
 const isValidSubject = (subject) => {
-  // const jsonLang = currentLang === "English" ? jsonEN : jsonAR;
+  const jsonLang = currentLang === "English" ? jsonEN : jsonAR;
   if (subject === "") {
-    displayError(subjectError, "Please Entre Subject");
+    displayError(subjectError, jsonLang["pleaseSubject"]);
     return false;
   }
   return true;
 };
 
 const isValidMessage = (message) => {
-  // const jsonLang = currentLang === "English" ? jsonEN : jsonAR;
+  const jsonLang = currentLang === "English" ? jsonEN : jsonAR;
   if (message === "") {
-    displayError(messageError, "Please Enter Message");
+    displayError(messageError, jsonLang["pleaseMessage"]);
     return false;
   }
   return true;
@@ -131,7 +131,7 @@ formEl.addEventListener("submit", (e) => {
     !validSubject ||
     !validMessage
   )
-    console.log("Error");
+    return;
 
   // fetch("https://knowticed-api.onrender.com/form", {
   //   method: "POST",
