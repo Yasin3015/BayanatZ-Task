@@ -4,9 +4,9 @@ const formEl = document.querySelector("form");
 const nameError = document.getElementById("nameError");
 const emailError = document.getElementById("emailError");
 const phoneError = document.getElementById("phoneError");
-const subjectError = document.getElementById("subjectError");
-const messageError = document.getElementById("messageError");
-let currentLang = localStorage.getItem("language");
+const subjectError = document.getElementById("subjectError")
+const messageError = document.getElementById("messageError")
+let currentLang = localStorage.getItem("language")
 
 let displayError = (ele, msg) => {
   ele.textContent = msg;

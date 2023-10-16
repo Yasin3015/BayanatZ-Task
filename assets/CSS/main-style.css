@@ -183,7 +183,7 @@ main {
 }
 
 .logo img {
-  height: 60px;
+  height: 75px;
 }
 
 .nav .bars {
@@ -430,7 +430,7 @@ footer .container div a {
 }
 
 footer .container div p {
-  color: #c4c4c4;
+  color: #979797;
 }
 
 footer .container .social a img {
@@ -1382,7 +1382,7 @@ form div::after {
   content: "";
   height: 1px;
   width: 15px;
-  background-color: rgb(146, 146, 146);
+  background-color: rgb(229, 229, 229);
   position: absolute;
   left: 2px;
   top: 0px;
@@ -1393,7 +1393,7 @@ form div::before {
   content: "";
   height: 1px;
   width: calc(100% - 90px);
-  background-color: rgb(146, 146, 146);
+  background-color: rgb(229, 229, 229);
   position: absolute;
   right: 3px;
   top: 0px;
@@ -1407,7 +1407,7 @@ form div.phonee::before {
 .form-container textarea {
   padding: 8px 15px;
   border-radius: 5px;
-  border: 1px solid rgb(146, 146, 146);
+  border: 1px solid rgb(229, 229, 229);
   outline: none;
   background: #f0eded42;
   color: black;
@@ -1436,13 +1436,16 @@ label:hover {
 }
 
 .form-container button {
-  padding: 0px 10px;
+  padding: 4px 10px;
   background: var(--green);
   color: white;
   font-size: 18px;
   font-weight: 700;
   border: none;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 5px;
 }
 
@@ -1507,5 +1510,4 @@ label sup {
   padding: 5px 15px !important;
   text-align: left;
 }
-
 /* End Contact Us page */
