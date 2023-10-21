@@ -510,13 +510,9 @@ p:nth-of-type(2) {
   display: grid;
   grid-template-columns: repeat(10, 1fr);
   gap: 20px;
-  /* margin-right: 40px; */
+  margin-right: 40px;
   overflow: hidden;
   scroll-behavior: smooth;
-}
-.carousel-one.dragging .card {
-  cursor: grab;
-  user-select: none;
 }
 .no-smooth {
   scroll-behavior: auto;
@@ -634,60 +630,59 @@ p:nth-of-type(2) {
   stroke: var(--green);
   align-self: center;
 }
-@media (max-width: 992px) {
-  .serv_big-card {
+@media (max-width:992px) {
+  .serv_big-card{
     width: 430px !important;
     height: 180px !important;
     text-align: left !important;
   }
-  .serv_big-card img {
+  .serv_big-card img{
     width: 25%;
   }
-  .big-card-discription h3 {
+  .big-card-discription h3{
     font-size: 15px !important;
     line-height: 1;
   }
-  .big-card-discription p {
+  .big-card-discription p{
     font-size: 12px !important;
     line-height: 15px !important;
   }
-  .article-link {
+  .article-link{
     font-size: 13px !important;
   }
 }
-@media (max-width: 500px) {
-  .serv_big-card {
+@media (max-width:500px) {
+  .serv_big-card{
     width: 270px !important;
     height: 130px !important;
     text-align: left !important;
   }
-  .serv_big-card img {
+  .serv_big-card img{
     width: 20%;
   }
-  .big-card-discription h3 {
+  .big-card-discription h3{
     font-size: 12px !important;
     line-height: 1;
   }
-  .big-card-discription p {
+  .big-card-discription p{
     font-size: 9px !important;
     line-height: 11px !important;
   }
-  .article-link {
+  .article-link{
     font-size: 9px !important;
   }
-  .carousel-two,
-  .carousel-one {
+  .carousel-two,.carousel-one{
     width: 97% !important;
   }
-  .importantReads {
+  .importantReads{
     font-size: 30px !important;
   }
 
-  .card {
+  .card{
     width: 290px !important;
     height: fit-content !important;
   }
-  .main-paragraph {
+  .main-paragraph{
     margin-bottom: 15px;
     font-size: 16px !important;
     line-height: 1.3 !important;
@@ -1516,3 +1511,140 @@ label sup {
   text-align: left;
 }
 /* End Contact Us page */
+
+/* ============ careers Cards =========== */
+.intern__card{
+  background-color: white;
+  width: 100%;
+  padding: 10px 15px;
+  border-radius: 7px;
+  margin-bottom: 30px;
+}
+.intern__card .card__top{
+  display: flex;
+}
+.intern__card .card__top .intern__info{
+  padding-left: 20px;
+}
+.intern__card .card__top .intern__info h2{
+  color: var(--green);
+  font-weight: 800;
+}
+.intern__card .card__top .intern__info .job_title{
+  color: #2d2d2d;
+}
+.intern__card .card__top .intern__info .graduation{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.intern__card .card__top p{
+  color: #2d2d2d;
+  font-size: 17px;
+  line-height: 1.8;
+}
+.intern__card .card__top p span{
+  color: #717070 ;
+}
+.prev__experirnce p{
+  color: #717070 !important;
+}
+.intern__card .card__top div{
+  margin: 5px 0px ;
+}
+.prev__experirnce h3{
+  font-size: 20px;
+  color: #2d2d2d;
+  font-weight: 400;
+}
+.btn__sp{
+  display: inline-block;
+  margin: 0px 8px;
+  padding: 3px 10px;
+  font-size: 16px;
+  color: white !important;
+  border-radius: 4px;
+  background: #4B4B4B;
+}
+
+
+.intern__card .card__bottom h3{
+  color: #2d2d2d;
+  font-size: 20px;
+  font-weight: 400;
+}
+.intern__card .card__bottom p{
+  color: #717070;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.intern__card .see__more{
+  display: none;
+}
+@media (max-width:992px) {
+  .interns{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+  }
+  .intern__card{
+    width:270px;
+    margin: 30px 5px;
+  }
+  .intern__card .card__top{
+    flex-direction: column !important;
+  }
+  .intern__card .card__top .intern__info{
+    padding-left: 0px !important;
+  }
+  .intern__card .card__top .card__image{
+    width: 100%;
+    height: 250px !important;
+    overflow: hidden;
+    border-radius: 5px;
+  }
+  .intern__card .card__top .card__image img{
+    width: 100% !important;
+  }
+  .intern__card .see__more{
+    display: inline-block;
+    font-size: 14px;
+    color: blue;
+    text-decoration: underline;
+    border: none;
+    background-color: transparent;
+  }
+  .prev__experirnce h3{
+    font-size: 17px;
+  }
+  .intern__card .card__bottom p{
+    font-size: 13px;
+  }
+  .btn__sp{
+    margin: 0px 2px;
+    padding: 1px 3px;
+    font-size: 9px;
+    border-radius: 3px;
+  }
+  .intern__card p{
+    font-size: 12px !important;
+  }
+  .intern__card .card__bottom{
+    display: none;
+  }
+  .intern__card .card__top .intern__info .graduation{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .height .work-headers{
+    margin-top: 30px !important;
+  }
+}
+@media (max-width:400px) {
+  .height .work-headers .header-p{
+    font-size: 14px !important;
+    margin: 4px !important;
+  }
+}

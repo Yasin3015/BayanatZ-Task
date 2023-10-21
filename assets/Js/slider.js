@@ -20,6 +20,7 @@ arrowBtns.forEach((btn) => {
   });
 });
 
+
 const autoPlay1 = () => {
   timeoutId1 = setTimeout(() => {
     carouselOne.scrollLeft += firstCardWidth;
@@ -74,30 +75,9 @@ arrowBtns.forEach((btn) => {
   btn.addEventListener("mouseleave", () => {
     const currentCarousel = btn.parentElement.nextElementSibling;
     if (currentCarousel === carouselOne) {
-      autoPlay1;
+      autoPlay1
     } else {
-      autoPlay2;
+      autoPlay2
     }
   });
 });
-let isDragging = false,
-  startX,
-  startScrollLeft;
-const dragging = (e) => {
-  if (!isDragging) return;
-
-  carouselOne.scrollLeft = startScrollLeft - (e.pageX - startX);
-};
-const dragStart = (e) => {
-  isDragging = true;
-  carouselOne.classList.add("dragging");
-  startX = e.pageX;
-  startScrollLeft = carouselOne.scrollLeft;
-};
-const dragStop = () => {
-  isDragging = false;
-  carouselOne.classList.remove("dragging");
-};
-carouselOne.addEventListener("mousedown", dragStart);
-carouselOne.addEventListener("mousemove", dragging);
-carouselOne.addEventListener("mouseup", dragStop);
