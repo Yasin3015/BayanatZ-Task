@@ -415,5 +415,19 @@
     </div>
     <script src="assets/Js/nav.js"></script>
     <script src="assets/Js/language.js" type="module"></script>
+    <script>
+      let myBtns = document.querySelectorAll(".see__more");
+      for(let i = 0; i<myBtns.length ; i++){
+        myBtns[i].addEventListener("click",()=>{
+          if(myBtns[i].textContent === "See More"){
+            myBtns[i].textContent = "See Less";
+            myBtns[i].parentElement.children[1].style.display = "block"
+          }else{
+            myBtns[i].textContent = "See More";
+            myBtns[i].parentElement.children[1].style.display = "none"
+          }
+        })
+      }
+    </script>
   </body>
 </html>
