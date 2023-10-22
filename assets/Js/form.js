@@ -8,6 +8,38 @@ const subjectError = document.getElementById("subjectError")
 const messageError = document.getElementById("messageError")
 let currentLang = localStorage.getItem("language")
 
+
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js'
+import { getFirestore, collection,  addDoc, getDocs} from 'https://www.gstatic.com/firebasejs/10.5.0/firebase-firestore.js'
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCxWxeAw57kUkNHZUcTPS2Ktn_G3rLB614",
+  authDomain: "bayanatz-2da32.firebaseapp.com",
+  projectId: "bayanatz-2da32",
+  storageBucket: "bayanatz-2da32.appspot.com",
+  messagingSenderId: "937995273276",
+  appId: "1:937995273276:web:2afaaf2c11a3071b16ef39",
+  measurementId: "G-N2G5CDVB7W"
+};
+
+initializeApp(firebaseConfig);
+const db = getFirestore();
+const User = collection(db, "Users");
+
+
+// Test getDocs
+// getDocs(User)
+//   .then((snapshot) => {
+//   let messages = []
+//   snapshot.docs.forEach((doc) => {
+//     messages.push({...doc.data(), id: doc.id})
+//   })
+//   console.log(messages)
+// }).catch((err) => {
+//   console.log(err.message)
+// });
+
+
 let displayError = (ele, msg) => {
   ele.textContent = msg;
   ele.parentElement.children[1].classList.add(`red`);
@@ -107,18 +139,17 @@ formEl.addEventListener("submit", (e) => {
   )
     return;
 
-  fetch("https://knowticed-api.onrender.com/form", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(data),
+  //   here  addDoc to firesotre 
+  addDoc(User, {
+    name: data.name,
+    email: data.email,
+    phone: data.phone,
+    subject: data.subject,
+    message: data.message
+  }).then(() =>{
+    formEl.reset();
   })
-    .then((res) => res.json())
-    .then((data) => {
-      console.log(data);
-    })
-    .catch((err) => console.log(err));
+
 });
 
 // Remove error on focus input

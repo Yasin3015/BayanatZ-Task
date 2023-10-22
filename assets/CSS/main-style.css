@@ -542,6 +542,7 @@ p:nth-of-type(2) {
 .card h5 {
   font-size: 16px;
   color: green;
+  text-transform: capitalize !important;
 }
 .card p {
   font-size: 14px;
@@ -556,14 +557,11 @@ p:nth-of-type(2) {
   justify-content: center;
   align-items: center;
   gap: 30px;
+  background-color: transparent;
 }
 .arrow-btn {
   border: none;
   border-radius: 15px;
-}
-.arrow-btn:hover {
-  /* add shadow  */
-  box-shadow: 0px 0px 5px rgb(192, 179, 179);
 }
 .btn-icon {
   display: flex;
@@ -571,10 +569,10 @@ p:nth-of-type(2) {
   align-items: center;
   width: 30px;
   height: 30px;
-
   border: 2px solid rgb(143, 138, 138);
   border-radius: 50%;
-  stroke: rgb(143, 138, 138);
+  color: rgb(143, 138, 138);
+  /* background-color: transparent !important; */
   cursor: pointer;
 }
 .carousel-two {
@@ -1582,19 +1580,34 @@ label sup {
 .intern__card .see__more{
   display: none;
 }
+.height .work-headers{
+  margin-top: 50px !important;
+  margin-bottom: 0px !important;
+}
 @media (max-width:992px) {
   .interns{
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: row;
+    /* width: fit-content; */
+    /* overflow: scroll; */
   }
   .intern__card{
     width:270px;
     margin: 30px 5px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 600px;
   }
   .intern__card .card__top{
     flex-direction: column !important;
+  }
+  .intern__card .card__top h2{
+    font-size: 23px !important;
+    font-weight: 400 !important;
   }
   .intern__card .card__top .intern__info{
     padding-left: 0px !important;
@@ -1616,8 +1629,8 @@ label sup {
     border: none;
     background-color: transparent;
   }
-  .prev__experirnce h3{
-    font-size: 17px;
+  .prev__experirnce{
+    display: none;
   }
   .intern__card .card__bottom p{
     font-size: 13px;
