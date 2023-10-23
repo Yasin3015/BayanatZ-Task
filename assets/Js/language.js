@@ -1,6 +1,7 @@
 import { jsonEN } from "./languageJson/jsonEN.js";
 import { jsonAR } from "./languageJson/jsonAR.js";
 import { changeCardContent } from "./tabs.js";
+import { setContent,mainEle,readBtns,article } from "./article.js";
 const languageBtn = document.querySelector(".language");
 
 const clearError = () => {
@@ -38,7 +39,8 @@ const changeLanguage = () => {
     }
     localStorage.setItem("language", "English");
     removeArabicDirection();
-    changeCardContent()
+    changeCardContent();
+    setContent();
   } else {
     for (const key of Object.keys(jsonAR)) {
       const el = document.querySelector(`.${key}`);
@@ -46,7 +48,8 @@ const changeLanguage = () => {
     }
     localStorage.setItem("language", "العربية");
     arabicDirection();
-    changeCardContent()
+    changeCardContent();
+    setContent();
   }
 };
 if (languageBtn) languageBtn.addEventListener("click", changeLanguage);

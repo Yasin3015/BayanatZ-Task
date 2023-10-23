@@ -6,6 +6,48 @@ const carouselTwo = document.querySelector(".carousel-two");
 const firstCardWidth = document.querySelector(".card").offsetWidth;
 const secondCardWidth = document.querySelector(".serv_big-card").offsetWidth;
 
+
+let isDown = false;
+let startX;
+let scrollLeft;
+
+function draggedSlider(sl){
+  let slider = sl;
+  const end = () => {
+    isDown = false;
+    slider.classList.remove('active');
+  }
+  
+  const start = (e) => {
+    isDown = true;
+    slider.style.cursor = "grab"
+    startX = e.pageX || e.touches[0].pageX - slider.offsetLeft;
+    scrollLeft = slider.scrollLeft;	
+  }
+  
+  const move = (e) => {
+    if(!isDown) return;
+  
+    e.preventDefault();
+    slider.style.cursor = "grabbing"
+    const x = e.pageX || e.touches[0].pageX - slider.offsetLeft;
+    const dist = (x - startX);
+    slider.scrollLeft = scrollLeft - dist;
+  }
+  
+  (() => {
+    slider.addEventListener('mousedown', start);
+    slider.addEventListener('touchstart', start);
+  
+    slider.addEventListener('mousemove', move);
+    slider.addEventListener('touchmove', move);
+  
+    slider.addEventListener('mouseleave', end);
+    slider.addEventListener('mouseup', end);
+    slider.addEventListener('touchend', end);
+  })();
+}
+
 let timeoutId1, timeoutId2;
 arrowBtns.forEach((btn) => {
   btn.addEventListener("click", () => {
@@ -81,3 +123,6 @@ arrowBtns.forEach((btn) => {
     }
   });
 });
+
+draggedSlider(carouselOne);
+draggedSlider(carouselTwo);

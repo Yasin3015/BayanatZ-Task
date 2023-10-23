@@ -69,16 +69,18 @@ form div.arphonee::before{
 .form-container button{
     padding-bottom: 6px !important;
 }
-.carousel-two,.carousel-one{
-    margin-right: 0px ;
-    margin-left: 40px !important;
-}
 .btns-container {
     left: 0px;
     justify-content: flex-start;
     flex-direction: row-reverse;
 }
-
+.article .bottom p:last-child{
+    margin-right: -30px;
+}
+.article .article_top .info{
+    padding-left: 30px;
+    padding-right: 0px;
+}
 @media (max-width:1020px) {
     .career .info{
         padding-right: 15px;
@@ -89,6 +91,12 @@ form div.arphonee::before{
 }
 
 @media (max-width: 992px) {
+    .article{
+        text-align: right !important;
+    }
+    .article .bottom p:last-child{
+        margin-right: 0px;
+    }
     .text h1,.text h2, .text p{
         text-align: center !important;
     }
