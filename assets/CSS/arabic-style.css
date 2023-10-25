@@ -81,6 +81,10 @@ form div.arphonee::before{
     padding-left: 30px;
     padding-right: 0px;
 }
+.intern__card .card__top .intern__info{
+    padding-left: 0px;
+    padding-right: 30px;
+}
 @media (max-width:1020px) {
     .career .info{
         padding-right: 15px;
@@ -91,6 +95,9 @@ form div.arphonee::before{
 }
 
 @media (max-width: 992px) {
+    .intern__card .card__top .intern__info{
+        padding: 0px !important;
+    }
     .article{
         text-align: right !important;
     }
@@ -167,4 +174,15 @@ form div.arphonee::before{
         flex-direction: column!important;
     }
 
+}
+@media (max-width:590px) {
+    .height .work-headers .header-p{
+        font-size: 13px !important;
+    }
+}
+
+@media (max-width:350px) {
+    .height .work-headers .header-p{
+        font-size: 11px !important;
+    }
 }

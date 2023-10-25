@@ -1,17 +1,6 @@
-let myBtns = document.querySelectorAll(".see__more");
-for (let i = 0; i < myBtns.length; i++) {
-  myBtns[i].addEventListener("click", () => {
-    if (myBtns[i].textContent === "See More") {
-      myBtns[i].textContent = "See Less";
-      myBtns[i].parentElement.style.height = "fit-content";
-      myBtns[i].parentElement.children[1].style.display = "block";
-    } else {
-      myBtns[i].textContent = "See More";
-      myBtns[i].parentElement.style.height = "600px";
-      myBtns[i].parentElement.children[1].style.display = "none";
-    }
-  });
-}
+let myBtns = document.querySelectorAll(".view__more");
+let hideBtns = document.querySelectorAll(".hide");
+
 var boxs = Array.from(document.getElementsByClassName("work-cardes")),
   count = boxs.length,
   currenttab = 1,
@@ -40,7 +29,6 @@ function draggedSlider(sl) {
   let slider = sl;
   const end = () => {
     isDown = false;
-    slider.classList.remove("active");
   };
 
   const start = (e) => {
@@ -53,7 +41,7 @@ function draggedSlider(sl) {
   const move = (e) => {
     if (!isDown) return;
 
-    e.preventDefault();
+    // e.preventDefault();
     slider.style.cursor = "grabbing";
     const x = e.pageX || e.touches[0].pageX - slider.offsetLeft;
     const dist = x - startX;
@@ -64,7 +52,7 @@ function draggedSlider(sl) {
     slider.addEventListener("mousedown", start);
     slider.addEventListener("touchstart", start);
 
-    slider.addEventListener("mousemove", move);
+    slider.addEventListener("mouseover", move);
     slider.addEventListener("touchmove", move);
 
     slider.addEventListener("mouseleave", end);
@@ -76,6 +64,28 @@ function draggedSlider(sl) {
 let slide = document.querySelector(".interns");
 function myFunction(x) {
   if (x.matches) {
+    myBtns.forEach((ele)=>{
+      ele.addEventListener('click',()=>{
+        myBtns.forEach((InerEle)=>{
+          InerEle.classList.remove("see__more");
+        });
+        ele.classList.add("hide");
+        ele.parentElement.children[1].style.display = "block";
+        ele.parentElement.style.height = "fit-content";
+        ele.parentElement.lastElementChild.classList.add("see__more");
+    
+      })
+    })
+    hideBtns.forEach((ele)=>{
+      ele.addEventListener('click',()=>{
+        hideBtns.forEach((InerEle)=>{
+          InerEle.classList.remove("see__more");
+        });
+        ele.parentElement.children[1].style.display = "none";
+        ele.parentElement.style.height = "fit-content";
+        ele.parentElement.children[2].classList.add("see__more");
+      })
+    })
     draggedSlider(slide);
   } else {
     return;

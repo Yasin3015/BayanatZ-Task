@@ -15,7 +15,8 @@ function draggedSlider(sl){
   let slider = sl;
   const end = () => {
     isDown = false;
-    slider.classList.remove('active');
+    slider.style.cursor = "grab";
+    slider.classList.remove("no-smooth");
   }
   
   const start = (e) => {
@@ -32,6 +33,7 @@ function draggedSlider(sl){
     slider.style.cursor = "grabbing"
     const x = e.pageX || e.touches[0].pageX - slider.offsetLeft;
     const dist = (x - startX);
+    slider.classList.add("no-smooth");
     slider.scrollLeft = scrollLeft - dist;
   }
   

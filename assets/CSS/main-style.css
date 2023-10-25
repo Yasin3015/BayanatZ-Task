@@ -508,16 +508,21 @@ p:nth-of-type(2) {
   position: relative;
 }
 .carousel-one {
-  display: grid;
-  grid-template-columns: repeat(10, 1fr);
-  gap: 20px;
+  white-space: nowrap;
   overflow: hidden;
   scroll-behavior: smooth;
+  user-select: none !important;
+  vertical-align: middle;
+
 }
 .no-smooth {
-  scroll-behavior: auto;
+  scroll-behavior: auto !important;
 }
 .card {
+  vertical-align: middle;
+  margin: 0px 5px;
+  display: inline-block;
+  white-space: wrap;
   margin-top: 80px;
   padding: 16px;
   background-color: white;
@@ -562,6 +567,9 @@ p:nth-of-type(2) {
   gap: 30px;
   background-color: transparent;
 }
+.btns-container button{
+  background-color: #2d2d2d00 !important;
+}
 .arrow-btn {
   border: none;
   border-radius: 15px;
@@ -572,15 +580,18 @@ p:nth-of-type(2) {
 }
 
 .carousel-two {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  width: 100%;
+  white-space: nowrap !important;
   overflow: hidden;
   scroll-behavior: smooth;
+  user-select: none;
 }
 .serv_big-card {
-  display: flex;
+  user-select: none;
+  white-space: wrap;
+  display: inline-flex;
   width: 630px;
+  margin: 5px;
   height: 240px;
   margin-bottom: 70px;
   margin-top: 85px;
@@ -1634,6 +1645,7 @@ label sup {
 }
 .intern__card .card__top .intern__info{
   padding-left: 20px;
+  width: 80%;
 }
 .intern__card .card__top .intern__info h2{
   color: var(--green);
@@ -1641,25 +1653,35 @@ label sup {
 }
 .intern__card .card__top .intern__info .job_title{
   color: #2d2d2d;
+  font-size: 22px !important;
 }
 .intern__card .card__top .intern__info .graduation{
   display: flex;
+  width: 100%;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-between !important;
 }
 .intern__card .card__top p{
   color: #2d2d2d;
   font-size: 17px;
-  line-height: 1.8;
+  line-height: 1.4;
 }
-.intern__card .card__top p span{
+.intern__card .card__top div span{
   color: #717070 ;
+  font-size: 15px;
+}
+
+.graduation p,
+.tools p,
+.future__goals p,
+.hobbies p{
+  display: inline-block;
 }
 .prev__experirnce p{
   color: #717070 !important;
 }
 .intern__card .card__top div{
-  margin: 5px 0px ;
+  margin: 2px 0px ;
 }
 .prev__experirnce h3{
   font-size: 20px;
@@ -1678,11 +1700,14 @@ label sup {
 
 
 .intern__card .card__bottom h3{
+  margin-top: 20px;
+  margin-bottom: 5px;
   color: #2d2d2d;
   font-size: 20px;
   font-weight: 400;
 }
 .intern__card .card__bottom p{
+  padding-bottom: 15px;
   color: #717070;
   font-size: 16px;
   line-height: 1.5;
@@ -1703,15 +1728,29 @@ label sup {
   text-transform: capitalize;
   padding: 80px 0px;
 }
+.hide{
+  display: none;
+}
+.prev__experirnce a{
+  display: inline-block;
+  color: blue;
+  margin: 10px;
+}
 @media (max-width:992px) {
-
+  .intern__card .card__top div{
+    margin: 0px  !important;
+    padding: 0px !important;
+  }
+  .intern__card .card__top h2{
+    margin-top: 10px !important;
+  }
   .interns{
     
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     gap: 10px;
     overflow: hidden;
-    scroll-behavior: smooth;
+    scroll-behavior: auto !important;
   }
   .intern__card{
     display: inline-block !important;
@@ -1728,6 +1767,8 @@ label sup {
   }
   .intern__card .card__top{
     flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: center !important;
   }
   .intern__card .card__top h2{
     font-size: 23px !important;
@@ -1735,6 +1776,7 @@ label sup {
   }
   .intern__card .card__top .intern__info{
     padding-left: 0px !important;
+    width: 100% !important;
   }
   .intern__card .card__top .card__image{
     width: 100%;
@@ -1746,7 +1788,7 @@ label sup {
     width: 100% !important;
   }
   .intern__card .see__more{
-    display: inline-block;
+    display: inline-block !important;
     font-size: 14px;
     color: #2d2d2d;
     text-decoration: underline;
@@ -1757,16 +1799,28 @@ label sup {
     right: 20px;
     bottom: 30px;
   }
+  .hide{
+    display: none !important;
+  }
   .prev__experirnce{
     display: none;
   }
   .intern__card .card__bottom p{
     font-size: 13px;
   }
+  .intern__card .card__bottom h3{
+    font-size: 16px !important;
+    line-height: 1.3;
+    margin: 20px 0px;
+  }
+  .intern__card .card__top div span{
+    font-size: 13px ;
+    line-height: 19px !important;
+  }
   .btn__sp{
     margin: 0px 2px;
-    padding: 1px 3px;
-    font-size: 9px;
+    padding: 1px 2px;
+    font-size: 11px !important;
     border-radius: 3px;
   }
   .intern__card p{
@@ -1781,6 +1835,13 @@ label sup {
   }
   .height .work-headers{
     margin-top: 30px !important;
+  }
+  
+  .future__goals{
+    display: none !important;
+  }
+  .intern__card .card__top .intern__info .job_title{
+    font-size: 17px !important;
   }
 }
 @media (max-width:400px) {
