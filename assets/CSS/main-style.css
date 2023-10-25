@@ -508,21 +508,17 @@ p:nth-of-type(2) {
   position: relative;
 }
 .carousel-one {
-  white-space: nowrap;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 10px;
   overflow: hidden;
   scroll-behavior: smooth;
   user-select: none !important;
-  vertical-align: middle;
-
 }
 .no-smooth {
   scroll-behavior: auto !important;
 }
 .card {
-  vertical-align: middle;
-  margin: 0px 5px;
-  display: inline-block;
-  white-space: wrap;
   margin-top: 80px;
   padding: 16px;
   background-color: white;
@@ -580,16 +576,17 @@ p:nth-of-type(2) {
 }
 
 .carousel-two {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
   width: 100%;
-  white-space: nowrap !important;
   overflow: hidden;
   scroll-behavior: smooth;
   user-select: none;
 }
 .serv_big-card {
   user-select: none;
-  white-space: wrap;
-  display: inline-flex;
+  display: flex;
   width: 630px;
   margin: 5px;
   height: 240px;
